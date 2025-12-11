@@ -1,0 +1,43 @@
+@startuml
+left to right direction
+actor Student as S
+actor Teacher as T
+
+rectangle "EL Campus" {
+  usecase "アンケートに回答" as EL1
+  usecase "課題ダウンロード" as EL2
+  usecase "掲示板を見る" as EL3
+  usecase "試験を受ける" as EL4
+  usecase "コンテンツ視聴" as EL5
+  usecase "お知らせを発行" as EL6
+}
+
+rectangle "UNIVERSAL PASSPORT" {
+  usecase "シラバス参照" as UP1
+  usecase "履修登録" as UP2
+  usecase "成績確認" as UP3
+  usecase "時間割" as UP4
+  usecase "資格希望" as UP5
+}
+
+'Student connections
+S --> EL1
+S --> EL2
+S --> EL3
+S --> EL4
+S --> EL5
+S --> UP1
+S --> UP2
+S --> UP3
+S --> UP4
+S --> UP5
+
+'Teacher connections
+T --> EL3
+T --> EL5
+T --> EL6
+T --> UP1
+T --> UP3
+T --> UP4
+
+@enduml
