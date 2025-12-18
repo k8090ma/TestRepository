@@ -1,0 +1,11 @@
+@startuml
+actor Main as "Main Function"
+participant Calc as "calculate()"
+participant Input as "getInput()"
+
+Main -> Calc : 呼び出し calculate()
+Calc -> Input : 呼び出し getInput()
+Input --> Calc : 入力データを返す
+Calc --> Main : 計算結果を返す
+Main -> Main : 計算結果を出力
+@enduml
